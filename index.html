@@ -46,31 +46,31 @@
             margin: 80px 0; /* Space for lace */
         }
 
-        /* 4. PFP AND TAMAGOTCHI FRAME */
-        .pfp-section {
-            position: absolute;
-            top: -60px;
-            left: -20px;
-            width: 200px;
-        }
+        /* THE PFP FRAME - Increased size */
+.pfp-container {
+    position: relative;
+    width: 280px; /* Increased from 200px to 280px */
+    margin-top: 20px;
+}
 
-        .tamagotchi-frame {
-            width: 100%;
-            position: relative;
-            z-index: 5;
-        }
+.tamagotchi-frame {
+    width: 100%;
+    z-index: 2;
+    position: relative;
+}
 
-        .actual-photo {
-            position: absolute;
-            top: 18%;
-            left: 15%;
-            width: 70%;
-            height: 62%;
-            object-fit: cover;
-            border-radius: 15px;
-            z-index: 4;
-        }
-
+/* THE ACTUAL PHOTO - Adjusted to fit the bigger frame */
+.actual-photo {
+    position: absolute;
+    /* Adjust these percentages until the photo is centered in the hole */
+    top: 16%;      
+    left: 14%;     
+    width: 72%;    /* Width of the photo inside the frame */
+    height: 64%;   /* Height of the photo inside the frame */
+    object-fit: cover;
+    border-radius: 10px;
+    z-index: 1;
+}
         /* 5. TEXT CONTENT */
         .content {
             margin-top: 120px; /* Room for the floating PFP */
