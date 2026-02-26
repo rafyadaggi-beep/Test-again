@@ -1,172 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rafya's Profile</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rafya's Profile</title>
 
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #d0e4f7;
-            /* Polka dot pattern matching your design */
-            background-image: radial-gradient(#ffffff 20%, transparent 20%);
-            background-size: 50px 50px;
-            font-family: 'Quicksand', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
-        /* 1. LACE BORDER PLACEMENT */
-        .header-lace {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 60px;
-            background: url('header.png') repeat-x;
-            background-size: contain;
-            z-index: 100;
-        }
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #d0e4f7;
+    background-image: radial-gradient(#ffffff 20%, transparent 20%);
+    background-size: 50px 50px;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
-        /* 2. MAIN CARD (The Blue Box) */
-        .card {
-            background-color: rgba(141, 169, 190, 0.9);
-            width: 90%;
-            max-width: 550px; /* Wider for Desktop */
-            padding: 50px 40px;
-            border-radius: 40px;
-            position: relative; /* Keeps decor inside */
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            margin: 100px 20px;
-        }
+/* Lace Header */
+.header-lace {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: url('header.png') repeat-x;
+    background-size: contain;
+    z-index: 100;
+}
 
-        /* 3. BIGGER PFP FRAME PLACEMENT */
-        .pfp-area {
-            position: absolute;
-            top: -80px; /* Floats above the box like the pic */
-            left: -30px;
-            width: 320px; /* Bigger frame as requested */
-        }
+/* Main Card */
+.card {
+    background-color: rgba(141, 169, 190, 0.95);
+    width: 90%;
+    max-width: 550px;
+    padding: 50px 40px;
+    border-radius: 40px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    margin: 120px 20px;
+}
 
-        .frame-img {
-            width: 100%;
-            z-index: 5;
-            position: relative;
-        }
+/* Tamagotchi Frame Area */
+.pfp-area {
+    position: absolute;
+    top: -100px;
+    left: -20px;
+    width: 280px; /* controls whole size */
+}
 
-        .photo-img {
-            position: absolute;
-            top: 17%; /* Perfectly centered in the big frame */
-            left: 14%;
-            width: 72%;
-            height: 62%;
-            object-fit: cover;
-            border-radius: 10px;
-            z-index: 1;
-        }
+/* Photo inside screen */
+.photo-img {
+    position: absolute;
+    top: 27%;
+    left: 22%;
+    width: 56%;
+    height: 46%;
+    object-fit: cover;
+    border-radius: 18px;
+    z-index: 1;
+}
 
-        /* 4. TEXT PLACEMENT */
-        .content {
-            margin-top: 180px; /* Space for the floating frame */
-            color: white;
-        }
+/* Frame sits on top */
+.frame-img {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
 
-        h1 {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 30px;
-            font-family: cursive;
-        }
+/* Content */
+.content {
+    margin-top: 170px;
+    color: white;
+}
 
-        .info p {
-            font-size: 1.2rem;
-            margin: 15px 0;
-            line-height: 1.5;
-        }
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-family: cursive;
+}
 
-        .label { font-weight: bold; color: #d1e3f0; }
+.info p {
+    font-size: 1.1rem;
+    margin: 12px 0;
+    line-height: 1.5;
+}
 
-        /* 5. BLA BLA BOX PLACEMENT */
-        .bla-box {
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 25px;
-            padding: 40px;
-            text-align: center;
-            font-size: 3rem;
-            font-weight: bold;
-            color: rgba(0,0,0,0.2);
-            margin-top: 40px;
-        }
+.label {
+    font-weight: bold;
+    color: #d1e3f0;
+}
 
-        /* 6. DECORATION PLACEMENTS */
-        .decor-bow {
-            position: absolute;
-            top: 40px;
-            right: -20px;
-            width: 70px;
-        }
+hr {
+    border: 1px solid rgba(255,255,255,0.2);
+    margin: 20px 0;
+}
 
-        .decor-thegang {
-            position: absolute;
-            bottom: -40px;
-            right: 10px;
-            width: 220px;
-        }
+/* Bla Box */
+.bla-box {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    padding: 40px;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgba(0,0,0,0.2);
+    margin-top: 40px;
+}
 
-        .decor-bubbles {
-            position: fixed;
-            left: 20px;
-            bottom: 100px;
-            width: 120px;
-            pointer-events: none;
-        }
+/* Decorations */
+.decor-bow {
+    position: absolute;
+    top: 40px;
+    right: -20px;
+    width: 70px;
+}
 
-        /* DESKTOP VS MOBILE FIX */
-        @media (max-width: 768px) {
-            .pfp-area { width: 220px; top: -50px; left: 10px; }
-            .content { margin-top: 120px; }
-            .card { width: 85%; }
-        }
-    </style>
+.decor-thegang {
+    position: absolute;
+    bottom: -40px;
+    right: 10px;
+    width: 220px;
+}
+
+.decor-bubbles {
+    position: fixed;
+    left: 20px;
+    bottom: 100px;
+    width: 120px;
+    pointer-events: none;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+    .pfp-area {
+        width: 200px;
+        top: -70px;
+        left: 10px;
+    }
+
+    .content {
+        margin-top: 130px;
+    }
+
+    .card {
+        width: 85%;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <div class="header-lace"></div>
+<div class="header-lace"></div>
 
-    <div class="card">
-        <div class="pfp-area">
-            <img src="frame.png" class="frame-img">
-            <img src="picture.png" class="photo-img">
-        </div>
+<div class="card">
 
-        <img src="bow.png" class="decor-bow">
-
-        <div class="content">
-            <h1>All about me!</h1>
-            
-            <div class="info">
-                <p><span class="label">Name:</span> Rafya A. Daggi</p>
-                <p><span class="label">Age:</span> 15 years old</p>
-                <p><span class="label">D.O.B:</span> July 6, 2010</p>
-                <p><span class="label">Address:</span> Zamboanga City, Philippines</p>
-                <hr style="border: 1px solid rgba(255,255,255,0.2);">
-                <p><span class="label">Likes:</span> Cats, Video Games, Anime, Kdramas & Spicy food</p>
-                <p><span class="label">Dislikes:</span> Noisy people, Romance Novels, Messy areas, Long Pacing shows/movies & Bitter food :)</p>
-            </div>
-
-            <div class="bla-box">
-                Bla bla<br>bla bla
-            </div>
-        </div>
-
-        <img src="thegang.png" class="decor-thegang">
+    <div class="pfp-area">
+        <img src="picture.png" class="photo-img">
+        <img src="frame.png" class="frame-img">
     </div>
 
-    <img src="bubbles.png" class="decor-bubbles">
+    <img src="bow.png" class="decor-bow">
+
+    <div class="content">
+        <h1>All about me!</h1>
+
+        <div class="info">
+            <p><span class="label">Name:</span> Rafya A. Daggi</p>
+            <p><span class="label">Age:</span> 15 years old</p>
+            <p><span class="label">D.O.B:</span> July 6, 2010</p>
+            <p><span class="label">Address:</span> Zamboanga City, Philippines</p>
+
+            <hr>
+
+            <p><span class="label">Likes:</span> Cats, Video Games, Anime, Kdramas & Spicy food</p>
+            <p><span class="label">Dislikes:</span> Noisy people, Romance Novels, Messy areas, Long pacing shows/movies & Bitter food :)</p>
+        </div>
+
+        <div class="bla-box">
+            Bla bla<br>bla bla
+        </div>
+    </div>
+
+    <img src="thegang.png" class="decor-thegang">
+
+</div>
+
+<img src="bubbles.png" class="decor-bubbles">
 
 </body>
 </html>
