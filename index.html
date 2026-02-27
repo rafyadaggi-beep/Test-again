@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rafya's Webpage</title>
     <style>
-        /* 1. FONT AND BACKGROUND */
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
         body {
@@ -13,7 +12,7 @@
             padding: 0;
             font-family: 'Quicksand', sans-serif;
             background-color: #d0e4f7;
-            /* Polka dots like the first image */
+            /* Polka dot background from design */
             background-image: radial-gradient(#ffffff 20%, transparent 20%);
             background-size: 50px 50px;
             display: flex;
@@ -23,7 +22,7 @@
             overflow-x: hidden;
         }
 
-        /* 2. THE LACE BORDER */
+        /* 1. LACE BORDER */
         .header-lace {
             position: fixed;
             top: 0;
@@ -34,114 +33,132 @@
             z-index: 100;
         }
 
-        /* 3. MAIN CARD CONTAINER */
+        /* 2. MAIN CARD CONTAINER */
         .main-card {
-            background-color: rgba(141, 169, 190, 0.9); /* Blue-grey from image */
+            background-color: rgba(141, 169, 190, 0.9);
             width: 90%;
-            max-width: 500px;
-            padding: 40px 30px;
-            border-radius: 30px;
+            max-width: 850px; /* Wider for desktop layout */
+            padding: 50px;
+            border-radius: 40px;
             position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin: 80px 0; /* Space for lace */
+            margin: 100px 20px;
+            display: flex;
+            flex-direction: row; /* Side-by-side on desktop */
+            align-items: flex-start;
+            gap: 40px;
         }
 
-        /* 4. PFP AND TAMAGOTCHI FRAME */
+        /* 3. BIGGER PFP SECTION */
         .pfp-section {
-            position: absolute;
-            top: -90px;
-            left: -40px;
-            width: 300px;
+            position: relative;
+            flex-shrink: 0;
+            width: 320px; /* Large frame size */
+            margin-top: -80px; /* Floats it up slightly */
+            margin-left: -70px; /* Floats it left */
         }
 
         .tamagotchi-frame {
-            width: 150%;
+            width: 100%;
             position: relative;
             z-index: 5;
         }
 
+        /* PHOTO FIT */
         .actual-photo {
             position: absolute;
-            top: 18%;
+            top: 18%;    /* Centers photo in the frame hole */
             left: 15%;
-            width: 70%;
+            width: 70%;  /* Fills the hole without zooming too much */
             height: 62%;
             object-fit: cover;
-            border-radius: 15px;
+            border-radius: 20px;
             z-index: 4;
         }
 
-        /* 5. TEXT CONTENT */
+        /* 4. CONTENT AREA */
         .content {
-            margin-top: 200px; /* Room for the floating PFP */
+            flex: 1;
             color: white;
         }
 
         .main-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: white;
+            font-size: 3.5rem;
+            margin: 0 0 20px 0;
+            font-family: 'Brush Script MT', cursive;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .info-list p {
-            margin: 10px 0;
-            font-size: 1.1rem;
+            margin: 12px 0;
+            font-size: 1.2rem;
             line-height: 1.4;
         }
 
         .label {
             font-weight: 700;
-            color: #f0f0f0;
+            color: #d1e3f0;
         }
 
-        /* 6. BLA BLA BOX */
+        /* 5. BLA BLA BOX */
         .bla-section {
             margin-top: 30px;
-            text-align: center;
         }
 
         .bla-box {
             background-color: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            border-radius: 20px;
-            font-size: 2rem;
+            padding: 30px;
+            border-radius: 25px;
+            font-size: 3rem;
             font-weight: bold;
-            color: rgba(0, 0, 0, 0.3);
-            line-height: 1.2;
+            color: rgba(0, 0, 0, 0.2);
+            text-align: center;
         }
 
-        /* 7. DECORATIONS (The PNGs) */
+        /* 6. DECORATIONS */
         .bow {
             position: absolute;
             top: 20px;
-            right: -10px;
-            width: 60px;
+            right: -20px;
+            width: 70px;
+            z-index: 10;
+        }
+
+        .thegang {
+            position: absolute;
+            bottom: -40px;
+            right: 20px;
+            width: 220px;
             z-index: 10;
         }
 
         .bubbles {
             position: fixed;
             left: 10px;
-            bottom: 20%;
-            width: 100px;
+            bottom: 100px;
+            width: 120px;
             pointer-events: none;
         }
 
-        .thegang {
-            position: absolute;
-            bottom: -30px;
-            right: 10px;
-            width: 200px;
-            z-index: 10;
-        }
-
-        /* Responsive Desktop vs Mobile */
-        @media (max-width: 600px) {
-            .pfp-section { width: 150px; top: -40px; left: 10px; }
-            .content { margin-top: 100px; }
-            .thegang { width: 150px; bottom: -20px; }
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 850px) {
+            .main-card {
+                flex-direction: column;
+                align-items: center;
+                padding: 30px;
+                margin-top: 80px;
+            }
+            .pfp-section {
+                margin: 0 auto 20px auto;
+                width: 250px;
+            }
+            .content {
+                text-align: center;
+            }
+            .main-title {
+                text-align: center;
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -165,13 +182,13 @@
                 <p><span class="label">Age:</span> 15 years old</p>
                 <p><span class="label">D.O.B:</span> July 6, 2010</p>
                 <p><span class="label">Address:</span> Zamboanga City, Philippines</p>
-                <hr style="opacity: 0.3;">
+                <hr style="opacity: 0.3; margin: 20px 0;">
                 <p><span class="label">Likes:</span> Cats, Video Games, Anime, Kdramas & Spicy food</p>
                 <p><span class="label">Dislikes:</span> Noisy people, Romance Novels, Messy areas, Long Pacing shows/movies & Bitter food :)</p>
             </div>
 
             <div class="bla-section">
-                <h2 style="font-size: 1.5rem;">More About Me!</h2>
+                <h2 style="font-size: 1.5rem; margin-bottom: 10px;">More About Me!</h2>
                 <div class="bla-box">
                     Bla bla<br>bla bla
                 </div>
